@@ -4,7 +4,7 @@
 @import '@fontsource/merriweather-sans/700.css';
 
 :root{
-
+    font-family: 'Merriweather Sans', sans-serif;
     --textMain: #B8C3FF;
     --textDim: #888AA4;
 
@@ -25,7 +25,7 @@
     --accentPurple: #A179AC;
 
 
-    font-family: 'Merriweather Sans', sans-serif;
+    
     color: var(--textDim);
     background-color: var(--bgMain);
 
