@@ -1,13 +1,9 @@
-<script>
-    import "$lib/styles.css";
-</script>
-
-<div class="h1">
-    <slot>Johannes Vermeer was a Dutch painter </slot>
-</div>
+<h1>
+    <slot />
+</h1>
 
 <style>
-    .h1{
+    h1 {
         font-size: 32px;
         font-weight: 700;
         padding: var(--buttonPadding);
