@@ -49,5 +49,8 @@
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@fontsource/merriweather-sans": "^5.0.13"
+  }
 }
