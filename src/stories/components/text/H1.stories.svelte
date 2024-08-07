@@ -1,13 +1,11 @@
 <script context="module">
-  import { H1 } from "$lib";
+    import { H1 } from "$lib/index.js";
+    import { Story } from "@storybook/addon-svelte-csf";
+
   export const meta = {
     title: "Text/H1",
     component: H1,
   }
-</script>
-
-<script>
-  import { Story } from "@storybook/addon-svelte-csf";
 </script>
 
 <Story name="Default">
