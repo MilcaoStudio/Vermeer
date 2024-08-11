@@ -1,29 +1,26 @@
 <script>
-
     export let hasBackground = false;
     export let isSmall = false;
-
+    export let onclick = ()=>{};
+    export let onkeydown = ()=>{};
     $: mode = hasBackground ? 'background' : 'transparent';
-    $: size = isSmall ? 'tiny' : 'regular';
-
-
+    $: size = isSmall ? 'small' : 'regular';
 </script>
 
-<div class={[mode, size].join(' ')}>
-    <slot>
-       
-    </slot>
-</div>
+<button tabindex="0" class={["IconButton",mode, size].join(' ')} {...$$restProps} on:click={onclick} on:keydown={onkeydown}>
+    <slot />
+</button>
 
 
 <style>
-    div{
+    .IconButton{
         display: flex;
         justify-content: center;
         align-items: center;
         border-radius: var(--borderRadius--iner);
         transition: all 0.3s ease 0s;
-
+        padding: 0px;
+        border: unset;
     }
 
     .background{
@@ -32,18 +29,16 @@
     .background:hover{
         background: var(--bgHover);
     }
-    div:hover :global( svg ){
+    .IconButton:hover :global( svg ){
         color: var(--textMain);
     }
     .background:active{
         background: var(--colorPrimary);
     }
-    div:active :global( svg ){
+    .IconButton:active :global( svg ){
         color: var(--textMain);
     }
     :global(svg){
-        height: 24px;
-        width: 24px;
         color: var(--textDim);
     }
 
@@ -60,11 +55,16 @@
         width: 32px;
         height: 32px;
     }
-    .tiny{
+    .regular :global(svg) {
+        width: 28px;
+        height: 28px;
+    }
+    .small{
         width: 22px;
         height: 22px;
     }
-    .tiny :global(svg){
+
+    .small :global(svg){
         width: 22px;
         height: 22px;
     }
