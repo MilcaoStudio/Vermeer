@@ -12,3 +12,4 @@ export { default as P4 } from "./components/atoms/text/P4.svelte";
 
 
 export { default as IconButton } from "./components/atoms/buttons/IconButton.svelte";
+export { default as CheckBox} from "./components/atoms/inputs/CheckBox.svelte";
