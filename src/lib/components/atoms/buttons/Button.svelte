@@ -2,9 +2,10 @@
   export let variant = 'accept';
   export let disabled = false;
   export let onClick = ()=>{};
+  $: isDisabled = disabled ? 'disabled' : variant;
 </script>
 
-<button class={['button', variant].join(' ')} disabled={disabled} on:click={onClick} {...$$restProps}>
+<button class={['button', isDisabled].join(' ')} disabled={disabled} on:click={onClick} {...$$restProps}>
   <slot />
 </button>
 
@@ -22,6 +23,7 @@
 
   /* VARIANTS */
 
+  /* Accept */
   .accept{
     background-color: var(--accentGreen);
   }
@@ -32,10 +34,7 @@
     background-color: var(--colorPrimary);
     border: 1px solid var(--textMain);
   }
-  .accept:disabled{
-    background-color: var(--bgSecondary);
-    color: var(--textDim);
-  }
+  /* Cancel */
 
   .cancel{
     background-color: var(--accentRed);
@@ -47,10 +46,8 @@
     background-color: #313751;
     border: 1px solid var(--textMain);
   }
-  .cancel:disabled{
-    background-color: var(--bgSecondary);
-    color: var(--textDim);
-  }
+
+  /* Option */
 
   .option{
     background-color: var(--bgHover);
@@ -62,5 +59,11 @@
   .option:active{
     background-color: var(--accentOrange);
     border: 1px solid var(--textMain);
+  }
+
+  /*Disabled*/
+  .disabled{
+    background-color: var(--bgSecondary);
+    color: var(--textDim);
   }
 </style>
