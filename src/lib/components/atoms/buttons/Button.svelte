@@ -1,5 +1,5 @@
 <script>
-  export let variant = 'accept';
+  export let variant = 'accept'; //accept, cancel, option
   export let disabled = false;
   export let onClick = ()=>{};
   $: isDisabled = disabled ? 'disabled' : variant;
