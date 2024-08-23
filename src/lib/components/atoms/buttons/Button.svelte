@@ -19,6 +19,7 @@
     color: #fff;
     font-size: 16px;
     font-weight: 400;
+    border: 1px solid transparent;
   }
 
   /* VARIANTS */
