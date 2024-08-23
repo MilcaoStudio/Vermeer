@@ -18,18 +18,20 @@
         justify-content: center;
         align-items: center;
         border-radius: var(--borderRadius--iner);
-        transition: all 0.3s ease 0s;
+        transition: all ease 0.3s;
         padding: 0px;
         border: unset;
     }
 
     .background{
         background: var(--bgMain);
+
     }
     .background:hover{
         background: var(--bgHover);
     }
     .IconButton:hover :global( svg ){
+        transition: all ease 0.89s;
         color: var(--textMain);
     }
     .background:active{
