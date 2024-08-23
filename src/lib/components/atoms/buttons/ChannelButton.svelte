@@ -45,7 +45,7 @@
   }
 
   .variant3{
-    background-color: #313751;
+    background-color: var(--colorSecondary);
     color: var(--textMain);
   }
 </style>

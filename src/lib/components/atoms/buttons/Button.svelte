@@ -43,7 +43,7 @@
     background-color: var(--bgHover);
   }
   .cancel:active{
-    background-color: #313751;
+    background-color: var(--colorSecondary);
     border: 1px solid var(--textMain);
   }
 
