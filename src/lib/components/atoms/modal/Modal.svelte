@@ -6,13 +6,8 @@
 {#if open}
   <div class="backdrop">
     <div class={["modal"].join(" ")} tabindex="-1" {...$$restProps}>
-      <h2>Create new server</h2>
-      <p>
-        When you create a server, you are accepting <br />
-        our terms of server and guidelines for moderation
-      </p>
-      <p class="serverName">Server name</p>
-      <input type="text" />
+      <h2><slot name="title">Title</slot></h2>
+      <slot />
       <div>
         <i class="icon"></i>
         <div class="buttonsContainer">
@@ -51,34 +46,6 @@
   .modal > h2 {
     color: var(--textMain);
     margin: 0;
-  }
-
-  .modal > p {
-    font-size: 14px;
-    font-weight: 400;
-    width: 328px;
-    margin: 0;
-    margin-top: 17px;
-  }
-
-  .modal .serverName {
-    font-size: 16px;
-    color: var(--textMain);
-    margin: 0;
-    margin-top: 17px;
-    font-weight: 400;
-  }
-
-  .modal > input {
-    font-size: 20px;
-    background-color: var(--bgHighlight);
-    color: var(--textMain);
-    margin: 0;
-    margin-top: 16px;
-    border: none;
-    height: 54px;
-    border-radius: 8px;
-    padding: 0;
   }
 
   .modal > div {
