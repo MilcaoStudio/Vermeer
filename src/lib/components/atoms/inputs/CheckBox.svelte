@@ -9,6 +9,7 @@
     appearance: none;
     border: 3px solid var(--bgTertiary);
     border-radius: var(--borderRadius--iner);
+    transition: 0.2s ease all;
   }
   .checkBox:checked {
     background-color: var(--bgTertiary);

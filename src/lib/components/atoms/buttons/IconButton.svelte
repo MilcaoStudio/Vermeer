@@ -31,7 +31,7 @@
         background: var(--bgHover);
     }
     .IconButton:hover :global( svg ){
-        transition: all ease 0.89s;
+        transition: all ease 0.24s;
         color: var(--textMain);
     }
     .background:active{

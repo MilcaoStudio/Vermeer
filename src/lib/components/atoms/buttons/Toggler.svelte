@@ -41,7 +41,7 @@
             background-color: gray;
             top: 2px; 
             left: 2px;
-            transition:  all ease 0.45s;
+            transition:  all ease 0.35s;
             
         }
              

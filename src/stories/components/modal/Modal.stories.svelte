@@ -43,13 +43,13 @@ import { Modal,} from "$lib/index.js";
   }
 
   input {
-    font-size: 20px;
+    font-size: 16px;
     background-color: var(--bgHighlight);
     color: var(--textMain);
     margin: 0;
     margin-top: 16px;
     border: none;
-    height: 54px;
+    height: 32px;
     border-radius: 8px;
     padding: 0;
   }
