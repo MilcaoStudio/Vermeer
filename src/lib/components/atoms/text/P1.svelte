@@ -1,4 +1,8 @@
-<p {...$$restProps}><slot /></p>
+<script>
+    export let color = "var(--textDim)";
+</script>
+
+<p {...$$restProps} style:color><slot /></p>
 
 <style>
     p {
