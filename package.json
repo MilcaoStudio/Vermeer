@@ -52,5 +52,6 @@
   "type": "module",
   "dependencies": {
     "@fontsource/merriweather-sans": "^5.0.13"
-  }
+  },
+  "packageManager": "pnpm@9.12.1"
 }
