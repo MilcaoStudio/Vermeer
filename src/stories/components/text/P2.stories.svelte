@@ -1,18 +1,18 @@
 <script context="module">
-    import { P1 } from "$lib/index.js";
+    import { P2 } from "$lib/index.js";
     import { Story, Template } from "@storybook/addon-svelte-csf";
     export const meta = {
-        title: "text/Body Large",
-        component: P1,
+        title: "text/Body Medium",
+        component: P2,
     }
 </script>
 
 
 
 <Template let:args>
-    <P1 {...args}>
+    <P2 {...args}>
       {args.content}
-    </P1>
+    </P2>
 </Template>
   
 <Story name="textDim" args={{color:"var(--textDim)", content: "Johannes Vermeer was a Dutch painter"}}></Story>

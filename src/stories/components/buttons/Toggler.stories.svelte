@@ -16,5 +16,4 @@
 </Template>
 
 
-<Story name="Transparent" args={{hasBackground: false}} />
-<Story name="With Background" args={{hasBackground: true}} />
+<Story name="Default" />
