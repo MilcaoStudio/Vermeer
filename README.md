@@ -1,51 +1,28 @@
-# create-svelte
-
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+# Vermeer (for Svelte 4)
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependencies with `pnpm install` (or `npm install` or `yarn`), start a development storybook server:
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm storybook
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+Everything inside `src/lib` is part of the library. Every story is inside `src/stories`.
 
 ## Building
 
-To build your library:
+To build your library (output should be inside `dist`):
 
 ```bash
-npm run package
+pnpm package
 ```
 
-To create a production version of your showcase app:
+To create a production version of the storybook app (output should be inside `storybook-static`):
 
 ```bash
-npm run build
+pnpm build-storybook
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
 ## Publishing
 
