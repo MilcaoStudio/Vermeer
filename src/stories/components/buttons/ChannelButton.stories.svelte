@@ -14,6 +14,5 @@
   </ChannelButton>
 </Template>
 
-<Story name="default" args={{variant: "default", content: "Explore Channels"}}></Story>
-<Story name="variant2" args={{variant: "variant2", content: "Explore Channels"}}></Story>
-<Story name="variant3" args={{variant: "variant3", content: "Explore Channels"}}></Story>
+<Story name="Default" args={{variant: "default", content: "Explore Channels"}}></Story>
+<Story name="Active" args={{variant: "active", content: "Explore Channels"}}></Story>
