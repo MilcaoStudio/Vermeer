@@ -1,11 +1,14 @@
-<script>
-  export let variant = 'accept'; //accept, cancel, option
+<script lang="ts">
+  let className = "";
+  export {className as class};
+  export let variant: "accept" | "cancel" | "option" = 'accept';
   export let disabled = false;
-  export let onClick = ()=>{};
-  $: isDisabled = disabled ? 'disabled' : variant;
+  export let onclick = ()=>{};
+  export let onkeydown = ()=>{};
+  $: variantClass = disabled ? 'disabled' : variant;
 </script>
 
-<button class={['button', isDisabled].join(' ')} disabled={disabled} on:click={onClick} {...$$restProps}>
+<button class={['button', variantClass, className].join(' ')} disabled={disabled} on:click={onclick} on:keydown={onkeydown} {...$$restProps}>
   <slot />
 </button>
 

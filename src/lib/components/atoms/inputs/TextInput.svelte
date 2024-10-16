@@ -1,11 +1,22 @@
-<script>
-    let type = "text";
+<script lang="ts">
+  export let changeonkeyup = true;
+  export let type: HTMLInputElement["type"] = "text";
+  export let onchange = () => {};
+  export let onkeydown = () => {};
+  export let onkeyup = changeonkeyup ? onchange : () => {};
 </script>
 
-<input {type} />
+<input
+  {type}
+  {...$$restProps}
+  on:change={onchange}
+  on:keydown={onkeydown}
+  on:keyup={onkeyup}
+/>
 
 <style>
-    p {
+  /* WARN: Unused selector */
+  p {
     font-size: 14px;
     font-weight: 400;
     width: 328px;
@@ -13,7 +24,6 @@
     margin-top: 17px;
   }
 
-  
   input {
     font-size: 16px;
     background-color: var(--bgHighlight);
