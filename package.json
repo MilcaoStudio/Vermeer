@@ -1,6 +1,7 @@
 {
   "name": "vermeer",
-  "version": "0.0.1",
+  "version": "0.5.0",
+  "keywords": ["svelte", "sveltekit", "library", "fluent", "ui/ux", "components"],
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run package",
@@ -27,21 +28,21 @@
     "svelte": "^4.0.0"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "1.6.1",
-    "@storybook/addon-essentials": "^8.2.7",
-    "@storybook/addon-interactions": "^8.2.7",
-    "@storybook/addon-links": "^8.2.7",
-    "@storybook/addon-svelte-csf": "4.1.4",
-    "@storybook/blocks": "^8.2.7",
-    "@storybook/svelte": "^8.2.7",
-    "@storybook/sveltekit": "^8.2.7",
-    "@storybook/test": "^8.2.7",
+    "@chromatic-com/storybook": "^2.0.2",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/addon-svelte-csf": "^4.1.7",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/svelte": "^8.3.5",
+    "@storybook/sveltekit": "^8.3.5",
+    "@storybook/test": "^8.3.5",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/package": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "publint": "^0.1.9",
-    "storybook": "^8.2.7",
+    "storybook": "^8.3.5",
     "svelte": "^4.2.7",
     "svelte-check": "^3.6.0",
     "typescript": "^5.0.0",
@@ -52,5 +53,6 @@
   "type": "module",
   "dependencies": {
     "@fontsource/merriweather-sans": "^5.0.13"
-  }
+  },
+  "packageManager": "pnpm@9.12.1"
 }
