@@ -20,6 +20,7 @@ import { Modal , TextInput } from "$lib/index.js";
   </Modal>
 </Template>
 
+
 <Story name="Empty">
   <Modal open />
 </Story>
@@ -41,8 +42,26 @@ import { Modal , TextInput } from "$lib/index.js";
   </Modal>
 </Story>
 
-<Story name="Create Server" args={{open: true, title: "Create a server", description: "When you create a server, you are accepting our terms of server and guidelines for moderation"}} />
+<Story name="Create Server" args={{open: true, title: "Create a server", description: "When you create a server, you are accepting our terms of server and guidelines for moderation"}} ></Story>
 
+<Story name="Create ser" args={{open: true, title: "Create a ", description: "When you create a server, you are accepting our terms of server and guidelines for moderation"}} >
+  
+  <Modal open>
+    <span slot="title">Coquito</span>
+    <p class="serverName">Server name</p>
+    <div slot="content">
+      {args.description}
+      <TextInput >
+
+      </TextInput>
+      <TextInput >
+  
+      </TextInput>
+    </div>
+    
+  </Modal>
+
+</Story>
 
 <style>
   .serverName {
