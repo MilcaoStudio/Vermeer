@@ -58,7 +58,7 @@
   }
   .option:hover{
     background-color: var(--bgTertiary);
-    border: 1px solid var(--bgSecondary);;
+    border: 1px solid var(--bgSecondary);
   }
   .option:active{
     background-color: var(--accentOrange);
