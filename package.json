@@ -1,6 +1,6 @@
 {
   "name": "vermeer-ui",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "keywords": ["svelte", "sveltekit", "library", "fluent", "ui/ux", "components"],
   "scripts": {
     "dev": "vite dev",
