@@ -8,7 +8,10 @@
     <div class={["modal"].join(" ")} tabindex="-1" {...$$restProps}>
       <h2><slot name="title">Title</slot></h2>
       <slot />
-      <div>
+      <div class="content">
+        <slot name="content"></slot>
+      </div>
+      <div class="bottomContainer">
         <i class="icon"></i>
         <div class="buttonsContainer">
           <Button variant="accept">Accept</Button>
@@ -31,7 +34,8 @@
   }
   .modal {
     width: 415px;
-    height: 306px;
+    min-height: 196px;
+    max-height: 400px;
     background-color: var(--bgHover);
     position: absolute;
     top: calc(50% - 153px);
@@ -41,6 +45,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
 
   .modal > h2 {
@@ -48,12 +53,14 @@
     margin: 0;
   }
 
-  .modal > div {
+  .bottomContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 21px;
   }
+
+
 
   .icon {
     width: 24px;
@@ -76,4 +83,6 @@
   .hidden {
     display: none;
   }
+
+  
 </style>

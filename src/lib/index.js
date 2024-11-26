@@ -14,5 +14,7 @@ export { default as P4 } from "./components/atoms/text/P4.svelte";
 export { default as IconButton } from "./components/atoms/buttons/IconButton.svelte";
 export { default as CheckBox} from "./components/atoms/inputs/CheckBox.svelte";
 export { default as Button } from "./components/atoms/buttons/Button.svelte";
+export { default as Toggler } from "./components/atoms/buttons/Toggler.svelte";
 export { default as ChannelButton } from "./components/atoms/buttons/ChannelButton.svelte"; 
 export { default as Modal } from "./components/atoms/modal/Modal.svelte";
+export { default as TextInput } from "./components/atoms/inputs/TextInput.svelte";

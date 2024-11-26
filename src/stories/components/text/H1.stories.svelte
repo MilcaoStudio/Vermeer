@@ -1,6 +1,6 @@
 <script context="module">
     import { H1 } from "$lib/index.js";
-    import { Story } from "@storybook/addon-svelte-csf";
+    import { Story, Template } from "@storybook/addon-svelte-csf";
 
   export const meta = {
     title: "Text/H1",
@@ -8,6 +8,14 @@
   }
 </script>
 
-<Story name="Default">
-  <H1>Johannes Vermeer was a Dutch painter</H1>
-</Story>
+
+
+<Template let:args>
+  <H1 {...args}>
+    {args.content}
+  </H1>
+</Template>
+
+<Story name="textDim" args={{color:"var(--textDim)", content: "Johannes Vermeer was a Dutch painter"}}></Story>
+<Story name="textMain" args={{color: "var(--textMain)", content: "Johannes Vermeer was a Dutch painter"}}></Story>
+<Story name="blueAccent" args={{color: "var(--colorSecondary)", content: "Johannes Vermeer was a Dutch painter"}}></Story>

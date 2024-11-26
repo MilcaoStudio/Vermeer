@@ -1,10 +1,13 @@
-<script>
-  export let variant = "default"; //default, variant2, variant3
-  export let onClick = () => {};
-
+<script lang="ts">
+  export let variant: "default" | "hover" | "active" = "default";
+  export let onclick = () => {};
+  export let onkeydown = () => {};
 </script>
 
-<button class={["channelButton" ,variant].join(" ")} {...$$restProps} on:click={onClick}> <i class="icon"></i>
+<button class={["channelButton" ,variant].join(" ")} {...$$restProps} on:click={onclick} on:keydown={onkeydown}>
+  <slot name="icon">
+    <i class="icon"></i>
+  </slot>
   <slot></slot>
 </button>
 
@@ -39,12 +42,12 @@
     color: var(--textDim);
   }
 
-  .variant2{
+  :hover, .hover{
     background-color: var(--bgHover);
     color: var(--textDim);
   }
 
-  .variant3{
+  .active{
     background-color: var(--colorSecondary);
     color: var(--textMain);
   }
