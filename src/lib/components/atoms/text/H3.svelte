@@ -1,8 +1,9 @@
 <script>
     export let color = "var(--textDim)";
+    export let margin = "0.5em 0";
 </script>
 
-<h3 {...$$restProps} style:color><slot /></h3>
+<h3 {...$$restProps} style:margin style:color><slot /></h3>
 
 <style>
     h3 {

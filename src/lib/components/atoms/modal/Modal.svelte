@@ -1,12 +1,20 @@
 <script>
-  import { Button } from "$lib/index.js";
+  import { Button, H2 } from "$lib/index.js";
   export let open = true;
+  export let title = "Title";
+  export let width = 415;
+  export let height = 400;
+
+  let sWidth = typeof width == "number" ? `${width}px` : width;
+  let sHeight = typeof height == "number" ? `${height}px` : height;
 </script>
 
 {#if open}
   <div class="backdrop">
-    <div class={["modal"].join(" ")} tabindex="-1" {...$$restProps}>
-      <h2><slot name="title">Title</slot></h2>
+    <div style:width={sWidth} style:max-height={sHeight} class={["modal"].join(" ")} tabindex="-1" {...$$restProps}>
+      <slot name="title">
+        <H2 color="var(--textMain)" margin="0">{title}</H2>
+      </slot>
       <slot />
       <div class="content">
         <slot name="content"></slot>
@@ -41,16 +49,11 @@
     top: calc(50% - 153px);
     left: calc(50% - 207.5px);
     border-radius: 8px;
-    padding: 31px 18px 17px 25px;
+    padding: 32px 20px 16px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-
-  .modal > h2 {
-    color: var(--textMain);
-    margin: 0;
   }
 
   .bottomContainer {
