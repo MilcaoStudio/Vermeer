@@ -1,9 +1,11 @@
 <script lang="ts">
+  import type { ChangeEventHandler, EventHandler, KeyboardEventHandler } from "svelte/elements";
+
   export let changeonkeyup = true;
   export let type: HTMLInputElement["type"] = "text";
-  export let onchange = () => {};
-  export let onkeydown = () => {};
-  export let onkeyup = changeonkeyup ? onchange : () => {};
+  export let onchange: ChangeEventHandler<HTMLInputElement> = () => {};
+  export let onkeydown: KeyboardEventHandler<HTMLInputElement> = () => {};
+  export let onkeyup: KeyboardEventHandler<HTMLInputElement> = changeonkeyup ? onchange : () => {};
 </script>
 
 <input
@@ -15,14 +17,6 @@
 />
 
 <style>
-  /* WARN: Unused selector */
-  p {
-    font-size: 14px;
-    font-weight: 400;
-    width: 328px;
-    margin: 0;
-    margin-top: 17px;
-  }
 
   input {
     font-size: 16px;

@@ -1,7 +1,9 @@
-<script>
+<script lang="ts">
+    import type { KeyboardEventHandler, MouseEventHandler } from "svelte/elements";
+
     export let disabled = false;
-    export let onclick = () => {};
-    export let onkeydown = () => {};
+    export let onclick: MouseEventHandler<HTMLInputElement> = () => {};
+    export let onkeydown: KeyboardEventHandler<HTMLInputElement> = () => {};
 </script>
 
 <input

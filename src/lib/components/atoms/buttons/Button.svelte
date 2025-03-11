@@ -1,10 +1,12 @@
 <script lang="ts">
+    import type { KeyboardEventHandler, MouseEventHandler } from "svelte/elements";
+
   let className = "";
   export {className as class};
   export let variant: "accept" | "cancel" | "option" = 'accept';
   export let disabled = false;
-  export let onclick = ()=>{};
-  export let onkeydown = ()=>{};
+  export let onclick: MouseEventHandler<HTMLButtonElement> = () => {};
+  export let onkeydown: KeyboardEventHandler<HTMLButtonElement> = () => {};
   $: variantClass = disabled ? 'disabled' : variant;
 </script>
 

@@ -1,4 +1,17 @@
-<input type="checkbox" class={"checkBox"} {...$$restProps} />
+<script lang="ts">
+    import type { ChangeEventHandler } from "svelte/elements";
+
+    let className = "";
+    export {className as class};
+    export let onchange: ChangeEventHandler<HTMLInputElement> = () => {}, oncheck: (checked: boolean) => void = () => {};
+
+    function oninputchange(e: Event & { currentTarget: EventTarget & HTMLInputElement }) {
+        oncheck(e.currentTarget.checked);
+        onchange(e);
+    }
+</script>
+
+<input type="checkbox" class={["checkBox", className].join(' ')} on:change={oninputchange} {...$$restProps} />
 
 <style>
   .checkBox {

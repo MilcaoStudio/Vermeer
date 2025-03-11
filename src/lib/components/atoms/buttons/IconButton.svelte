@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
+    import type { KeyboardEventHandler, MouseEventHandler } from "svelte/elements";
+
     export let hasBackground = false;
     export let isSmall = false;
-    export let onclick = ()=>{};
-    export let onkeydown = ()=>{};
+    export let onclick: MouseEventHandler<HTMLButtonElement> = () => {};
+    export let onkeydown: KeyboardEventHandler<HTMLButtonElement> = () => {};
     $: mode = hasBackground ? 'background' : 'transparent';
     $: size = isSmall ? 'small' : 'regular';
 </script>

@@ -1,7 +1,9 @@
 <script lang="ts">
+    import type { KeyboardEventHandler, MouseEventHandler } from "svelte/elements";
+
   export let variant: "default" | "hover" | "active" = "default";
-  export let onclick = () => {};
-  export let onkeydown = () => {};
+  export let onclick: MouseEventHandler<HTMLButtonElement> = () => {};
+  export let onkeydown: KeyboardEventHandler<HTMLButtonElement> = () => {};
 </script>
 
 <button class={["channelButton" ,variant].join(" ")} {...$$restProps} on:click={onclick} on:keydown={onkeydown}>
