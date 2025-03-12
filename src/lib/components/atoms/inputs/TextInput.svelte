@@ -3,6 +3,9 @@
 
   export let changeonkeyup = true;
   export let type: HTMLInputElement["type"] = "text";
+  export let width = "100%";
+  export let height = "32px";
+  export let borderRadius = "3px";
   export let onchange: ChangeEventHandler<HTMLInputElement> = () => {};
   export let onkeydown: KeyboardEventHandler<HTMLInputElement> = () => {};
   export let onkeyup: KeyboardEventHandler<HTMLInputElement> = changeonkeyup ? onchange : () => {};
@@ -11,6 +14,9 @@
 <input
   {type}
   {...$$restProps}
+  style:width
+  style:height
+  style:border-radius={borderRadius}
   on:change={onchange}
   on:keydown={onkeydown}
   on:keyup={onkeyup}
@@ -19,14 +25,12 @@
 <style>
 
   input {
-    font-size: 16px;
+    font-size: 14px;
+    font-family: inherit;
     background-color: var(--bgHighlight);
     color: var(--textMain);
     margin: 0;
-    margin-top: 16px;
     border: none;
-    height: 32px;
-    border-radius: 8px;
     padding: 0;
   }
 </style>
