@@ -1,17 +1,17 @@
-<script context="module">
-    // Matches a hex code, rgb(a), or hsl(a), with optional position
-    export const gradientStopRegex =
-        /(?:(#[0-9a-fA-F]{6,8})|(rgba?\(.+\))|(hsla?\(.+\)))\s*(?:(\d+)%)?/;
-</script>
-
 <script lang="ts">
+    import { gradientStopRegex } from "$lib/regex.js";
     import IconButton from "../buttons/IconButton.svelte";
     import GradientStop from "./GradientStop.svelte";
     import TextInput from "./TextInput.svelte";
 
     type GradientStop = [string, number];
     export let stops: string[] = ["#000000", "#ffffff 50%"],
-        angle = 90;
+        angle = 90,
+        width: string | number = 260;
+    $: if (typeof width == "number") {
+        width = `${width}px`;
+    }
+
     let parsedStops: GradientStop[] = stops.map((stop, i) => {
         const match = stop.match(gradientStopRegex);
         if (!match) {
@@ -30,8 +30,10 @@
     });
     let preview: HTMLDivElement | null;
     let editAngle = false;
-    $: if (preview)
+    $: if (preview) {
         preview.style.background = `linear-gradient(${angle}deg, ${parsedStops.map(([color, pos]) => `${color} ${Math.round(pos * 100)}%`).join(", ")})`;
+        //preview.style.width = width;
+    }
 
     function setAngle(value: number) {
         if (isNaN(value)) angle = 0;
@@ -41,8 +43,8 @@
     }
 </script>
 
-<div class="preview" bind:this={preview}></div>
-<div class="column" style="width: 250px;">
+<div class="preview" bind:this={preview} style:width></div>
+<div class="column" style:width>
     <div class="rowreverse">
         <div class="inlinerow">
             {#if editAngle}
@@ -93,7 +95,7 @@
 
 <style>
     .preview {
-        width: 240px;
+        min-width: 260px;
         height: 20px;
         margin-bottom: 1em;
     }
