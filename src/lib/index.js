@@ -18,3 +18,5 @@ export { default as Toggler } from "./components/atoms/buttons/Toggler.svelte";
 export { default as ChannelButton } from "./components/atoms/buttons/ChannelButton.svelte"; 
 export { default as Modal } from "./components/atoms/modal/Modal.svelte";
 export { default as TextInput } from "./components/atoms/inputs/TextInput.svelte";
+export { default as ColorSwatch } from "./components/atoms/inputs/ColorSwatch.svelte";
+export { default as LinearGradient } from "./components/atoms/inputs/LinearGradient.svelte";
