@@ -16,7 +16,8 @@
         throw TypeError("LinearGradient requires at least two stops");
     }
 
-    let parsedStops: GradientStop[] = stops.map((stop, i) => {
+    let parsedStops: GradientStop[] = [];
+    $: parsedStops = stops.map((stop, i) => {
         const match = stop.match(gradientStopRegex);
         if (!match) {
             //console.warn(`Could not parse gradient stop ${stop}`);
@@ -34,14 +35,25 @@
     });
     let editAngle = false;
 
-    let gradientArgs = parsedStops.map(([color, pos]) => `${color} ${Math.round(pos * 100)}%`).join(", ");
-    let gradient = `linear-gradient(${angle}deg, ${gradientArgs})`;
+    $: gradientArgs = parsedStops.map(([color, pos]) => `${color} ${Math.round(pos * 100)}%`).join(", ");
+    $: gradient = `linear-gradient(${angle}deg, ${gradientArgs})`;
 
     function setAngle(value: number) {
         if (isNaN(value)) angle = 0;
         else if (value < 0) angle = 0;
         else if (value > 360) angle = 360;
         else angle = value;
+    }
+
+    function insertStop(index: number) {
+        if (index < 1) throw RangeError("Cannot insert stop at index 0 or less");
+        if (index >= parsedStops.length) throw RangeError("Cannot insert stop after last stop");
+        const before = parsedStops.at(index - 1)!;
+        const after = parsedStops.at(index)!;
+        // TODO: color interpolation between stops
+        const color = before[0];
+        const position = (before[1] + after[1]) / 2;
+        parsedStops = [...parsedStops.slice(0, index), [color, position], ...parsedStops.slice(index)];
     }
 </script>
 
@@ -90,7 +102,7 @@
         />
     {/each}
     <div class="rowreverse">
-        <IconButton hasBackground isSmall onclick={() => (parsedStops = [...parsedStops, ["#000000", 1]])}>
+        <IconButton hasBackground isSmall onclick={() => insertStop(parsedStops.length - 1)}>
             <span class="action">+</span>
         </IconButton>
     </div>
