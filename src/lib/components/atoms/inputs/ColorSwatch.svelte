@@ -7,7 +7,8 @@
 
     export let color = "#000000",
         onchange: (e: { rgb: string; alpha: string }) => void = () => {},
-        width: string = "250px";
+        width: string = "250px",
+        editable = false;
     $: if (typeof width == "number") {
         width = `${width}px`;
     }
@@ -89,8 +90,8 @@
             <span
                 role="textbox"
                 tabindex="0"
-                on:click={() => (editRgb = true)}
-                on:keydown={() => (editRgb = true)}
+                on:click={() =>{ if (editable) editRgb = true }}
+                on:keydown={() =>{ if (editable) editRgb = true }}
             >
             #{rgb.padStart(6, "0")}
             </span>
@@ -118,8 +119,8 @@
             <span
                 role="textbox"
                 tabindex="0"
-                on:click={() => (editAlpha = true)}
-                on:keydown={() => (editRgb = true)}
+                on:click={() => { if (editable) editAlpha = true }}
+                on:keydown={() => { if (editable) editAlpha = true }}
             >
                 {alphaPercent}
             </span>

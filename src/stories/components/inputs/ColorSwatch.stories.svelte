@@ -9,6 +9,7 @@
       args: {
         color: "#000000",
         width: 250,
+        editable: false,
       },
       argTypes: {
         color: {
@@ -23,7 +24,7 @@
             step: 10,
           },
           description: "Width (px) of the color swatch",
-        }
+        },
       }
     }
   </script>

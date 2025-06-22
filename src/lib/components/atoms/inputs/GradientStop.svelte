@@ -8,7 +8,8 @@
         mayRemove = false,
         onremove = () => {},
         // color: #000000ff, position: 0.5
-        onchange: (e: { color: string, position: number }) => void = () => {};
+        onchange: (e: { color: string, position: number }) => void = () => {},
+        editable = false;
     let editPosition = false;
 
     function setColor(value: string) {
@@ -44,8 +45,8 @@
             role="textbox"
             class="position"
             tabindex="0"
-            on:click={() => (editPosition = true)}
-            on:keydown={() => (editPosition = true)}
+            on:click={() => {if (editable) editPosition = true}}
+            on:keydown={() => {if (editable) editPosition = true}}
         >
         {Math.round(position * 100)}%
         </span>
@@ -53,6 +54,7 @@
     <ColorSwatch
         {color}
         onchange={({ rgb, alpha }) => setColor(`#${rgb}${alpha}`)}
+        {editable}
     >
         {#if mayRemove}
             <IconButton hasBackground isSmall onclick={onremove}>

@@ -99,6 +99,7 @@
             mayRemove={parsedStops.length > 2}
             onremove={() =>
                 (parsedStops = parsedStops.filter((_, i) => i != index))}
+            editable={true}
         />
     {/each}
     <div class="rowreverse">
