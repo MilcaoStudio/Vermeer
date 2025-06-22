@@ -5,17 +5,21 @@
     import TextInput from "./TextInput.svelte";
 
     type GradientStop = [string, number];
-    export let stops: string[] = ["#000000", "#ffffff 50%"],
-        angle = 90,
+    export let stops: string[],
+        angle = 0,
         width: string | number = 260;
     $: if (typeof width == "number") {
         width = `${width}px`;
     }
 
+    if (stops.length < 2) {
+        throw TypeError("LinearGradient requires at least two stops");
+    }
+
     let parsedStops: GradientStop[] = stops.map((stop, i) => {
         const match = stop.match(gradientStopRegex);
         if (!match) {
-            console.warn(`Could not parse gradient stop ${stop}`);
+            //console.warn(`Could not parse gradient stop ${stop}`);
             return [stop, i / (stops.length - 1)];
         }
         // match[1] = hex
@@ -28,12 +32,10 @@
             : i / (stops.length - 1);
         return [color, position];
     });
-    let preview: HTMLDivElement | null;
     let editAngle = false;
-    $: if (preview) {
-        preview.style.background = `linear-gradient(${angle}deg, ${parsedStops.map(([color, pos]) => `${color} ${Math.round(pos * 100)}%`).join(", ")})`;
-        //preview.style.width = width;
-    }
+
+    let gradientArgs = parsedStops.map(([color, pos]) => `${color} ${Math.round(pos * 100)}%`).join(", ");
+    let gradient = `linear-gradient(${angle}deg, ${gradientArgs})`;
 
     function setAngle(value: number) {
         if (isNaN(value)) angle = 0;
@@ -43,7 +45,6 @@
     }
 </script>
 
-<div class="preview" bind:this={preview} style:width></div>
 <div class="column" style:width>
     <div class="rowreverse">
         <div class="inlinerow">
@@ -88,18 +89,15 @@
                 (parsedStops = parsedStops.filter((_, i) => i != index))}
         />
     {/each}
-    <IconButton hasBackground onclick={() => (parsedStops = [...parsedStops, ["#000000", 1]])}>
-        <span class="action">+</span>
-    </IconButton>
+    <div class="rowreverse">
+        <IconButton hasBackground isSmall onclick={() => (parsedStops = [...parsedStops, ["#000000", 1]])}>
+            <span class="action">+</span>
+        </IconButton>
+    </div>
 </div>
+<slot background={gradient} />
 
 <style>
-    .preview {
-        min-width: 260px;
-        height: 20px;
-        margin-bottom: 1em;
-    }
-
     .column {
         display: flex;
         flex-direction: column;
@@ -119,6 +117,6 @@
 
     :global(.action) {
         color: var(--textDim);
-        font-size: 2em;
+        font-size: 1.5em;
     }
 </style>

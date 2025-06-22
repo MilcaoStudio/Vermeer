@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ChangeEventHandler, EventHandler, KeyboardEventHandler } from "svelte/elements";
+  import type { ChangeEventHandler, FocusEventHandler, KeyboardEventHandler } from "svelte/elements";
 
   export let changeonkeyup = true;
   export let type: HTMLInputElement["type"] = "text";
@@ -9,6 +9,8 @@
   export let onchange: ChangeEventHandler<HTMLInputElement> = () => {};
   export let onkeydown: KeyboardEventHandler<HTMLInputElement> = () => {};
   export let onkeyup: KeyboardEventHandler<HTMLInputElement> = changeonkeyup ? onchange : () => {};
+  export let onblur: FocusEventHandler<HTMLInputElement> = () => {};
+  export let onfocus: FocusEventHandler<HTMLInputElement> = () => {};
 </script>
 
 <input
@@ -20,6 +22,8 @@
   on:change={onchange}
   on:keydown={onkeydown}
   on:keyup={onkeyup}
+  on:blur={onblur}
+  on:focus={onfocus}
 />
 
 <style>

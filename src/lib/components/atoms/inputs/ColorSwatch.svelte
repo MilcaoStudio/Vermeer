@@ -6,7 +6,11 @@
     import Row from "$lib/components/layout/Row.svelte";
 
     export let color = "#000000",
-        onchange: (e: { rgb: string; alpha: string }) => void = () => {};
+        onchange: (e: { rgb: string; alpha: string }) => void = () => {},
+        width: string = "250px";
+    $: if (typeof width == "number") {
+        width = `${width}px`;
+    }
     let colorAttributes = rgba(color);
     let alpha = colorAttributes.pop() || 1;
     let alphaHex = "ff";
@@ -58,20 +62,20 @@
     }
 </script>
 
-<Row>
+<Row {width}>
     <IconButton onclick={selectColor}>
         <div class="swatch" style:background=#{rgb}>
             <div class="swatch-opacity" style:opacity={1 - alpha}></div>
         </div>
     </IconButton>
-    <P3>
+    <P3 width="5em">
         {#if editRgb}
             #
             <TextInput
                 type="text"
                 autofocus
                 height="1.2em"
-                width="3.5em"
+                width="4em"
                 maxlength="6"
                 value={rgb}
                 changeonkeyup={false}
@@ -79,6 +83,7 @@
                     setRgb(e.currentTarget.value);
                     editRgb = false;
                 }}
+                onblur={() => (editRgb = false)}
             />
         {:else}
             <span
@@ -91,7 +96,7 @@
             </span>
         {/if}
     </P3>
-    <P3>
+    <P3 width="4.5em">
         {#if editAlpha}
             <TextInput
                 type="number"
@@ -107,6 +112,7 @@
                     setAlpha(e.currentTarget.valueAsNumber);
                     editAlpha = false;
                 }}
+                onblur={() => (editAlpha = false)}
             />
         {:else}
             <span
