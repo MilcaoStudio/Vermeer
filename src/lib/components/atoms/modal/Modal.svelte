@@ -60,8 +60,6 @@
     margin-top: 21px;
   }
 
-
-
   .icon {
     width: 24px;
     height: 24px;
@@ -83,6 +81,4 @@
   .hidden {
     display: none;
   }
-
-  
 </style>

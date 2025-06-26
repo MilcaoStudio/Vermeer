@@ -1,61 +1,55 @@
+@import "@fontsource/merriweather-sans/300.css";
+@import "@fontsource/merriweather-sans/400.css";
+@import "@fontsource/merriweather-sans/700.css";
 
-@import '@fontsource/merriweather-sans/300.css';
-@import '@fontsource/merriweather-sans/400.css'; 
-@import '@fontsource/merriweather-sans/700.css';
+:root {
+  font-family: "Merriweather Sans", sans-serif;
+  --textMain: #b8c3ff;
+  --textDim: #888aa4;
 
-:root{
-    font-family: 'Merriweather Sans', sans-serif;
-    --textMain: #B8C3FF;
-    --textDim: #888AA4;
+  --bgMainLight: #414660;
 
-    --bgMainLight: #414660;
+  --bgMain: #121318;
+  --bgHighlight: #1b1b21;
+  --bgHover: #252733;
+  --bgSecondary: #292a2f;
+  --bgTertiary: #53545b;
 
-    --bgMain: #121318;
-    --bgHighlight: #1B1B21;
-    --bgHover: #252733;
-    --bgSecondary: #292A2F;
-    --bgTertiary: #53545B;
+  --colorPrimary: #404f92;
+  --colorSecondary: #272e50;
 
-    --colorPrimary: #404F92;
-    --colorSecondary: #272E50;
+  --accentGreen: #3fa35c;
+  --accentRed: #e54e4e;
+  --accentOrange: #de9e5e;
+  --accentPurple: #a179ac;
 
-    --accentGreen: #3FA35C;
-    --accentRed: #E54E4E;
-    --accentOrange: #DE9E5E;
-    --accentPurple: #A179AC;
+  color: var(--textDim);
+  background-color: var(--bgMain);
 
+  /* DIMENSIONS */
 
-    
-    color: var(--textDim);
-    background-color: var(--bgMain);
+  --sidebar-width: 218px;
 
-    /* DIMENSIONS */
+  /* PADDING */
 
-    --sidebar-width: 218px;
+  --buttonPadding: 5px 7px 5px 7px;
 
+  --padding-xs: 4px;
+  --padding-s: 6px;
+  --padding-m: 8px;
+  --padding-l: 12px;
+  --padding-xl: 16px;
 
-    /* PADDING */
+  /* MARGIN */
 
-    --buttonPadding: 5px 7px 5px 7px;
+  --margin-xs: 4px;
+  --margin-s: 6px;
+  --margin-m: 8px;
+  --margin-l: 12px;
+  --margin-xl: 16px;
 
-    --padding-xs: 4px;
-    --padding-s: 6px;
-    --padding-m: 8px;
-    --padding-l: 12px;
-    --padding-xl: 16px;
+  /* BORDER RADIUS */
 
-    /* MARGIN */
-
-    --margin-xs: 4px;
-    --margin-s: 6px;
-    --margin-m: 8px;
-    --margin-l: 12px;
-    --margin-xl: 16px;
-    
-
-    /* BORDER RADIUS */
-
-    --borderRadius: 3px;
-    --borderRadius--iner: 6px;
+  --borderRadius: 3px;
+  --borderRadius--iner: 6px;
 }
-

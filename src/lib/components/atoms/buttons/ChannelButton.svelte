@@ -1,12 +1,20 @@
 <script lang="ts">
-    import type { KeyboardEventHandler, MouseEventHandler } from "svelte/elements";
+  import type {
+    KeyboardEventHandler,
+    MouseEventHandler,
+  } from "svelte/elements";
 
   export let variant: "default" | "hover" | "active" = "default";
   export let onclick: MouseEventHandler<HTMLButtonElement> = () => {};
   export let onkeydown: KeyboardEventHandler<HTMLButtonElement> = () => {};
 </script>
 
-<button class={["channelButton" ,variant].join(" ")} {...$$restProps} on:click={onclick} on:keydown={onkeydown}>
+<button
+  class={["channelButton", variant].join(" ")}
+  {...$$restProps}
+  on:click={onclick}
+  on:keydown={onkeydown}
+>
   <slot name="icon">
     <i class="icon"></i>
   </slot>
@@ -14,9 +22,7 @@
 </button>
 
 <style>
-
-  
-  .channelButton{
+  .channelButton {
     height: 28px;
     padding: var(--padding-s) 42px var(--padding-s) var(--padding-xl);
     box-sizing: border-box;
@@ -39,17 +45,18 @@
   }
 
   /*VARIANTS*/
-  .default{
+  .default {
     background-color: transparent;
     color: var(--textDim);
   }
 
-  :hover, .hover{
+  :hover,
+  .hover {
     background-color: var(--bgHover);
     color: var(--textDim);
   }
 
-  .active{
+  .active {
     background-color: var(--colorSecondary);
     color: var(--textMain);
   }

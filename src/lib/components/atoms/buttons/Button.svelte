@@ -1,21 +1,30 @@
 <script lang="ts">
-    import type { KeyboardEventHandler, MouseEventHandler } from "svelte/elements";
+  import type {
+    KeyboardEventHandler,
+    MouseEventHandler,
+  } from "svelte/elements";
 
   let className = "";
-  export {className as class};
-  export let variant: "accept" | "cancel" | "option" = 'accept';
+  export { className as class };
+  export let variant: "accept" | "cancel" | "option" = "accept";
   export let disabled = false;
   export let onclick: MouseEventHandler<HTMLButtonElement> = () => {};
   export let onkeydown: KeyboardEventHandler<HTMLButtonElement> = () => {};
-  $: variantClass = disabled ? 'disabled' : variant;
+  $: variantClass = disabled ? "disabled" : variant;
 </script>
 
-<button class={['button', variantClass, className].join(' ')} disabled={disabled} on:click={onclick} on:keydown={onkeydown} {...$$restProps}>
+<button
+  class={["button", variantClass, className].join(" ")}
+  {disabled}
+  on:click={onclick}
+  on:keydown={onkeydown}
+  {...$$restProps}
+>
   <slot />
 </button>
 
 <style>
-  .button{
+  .button {
     box-sizing: border-box;
     padding: 12px 28px;
     border-radius: var(--borderRadius);
@@ -30,45 +39,45 @@
   /* VARIANTS */
 
   /* Accept */
-  .accept{
+  .accept {
     background-color: var(--accentGreen);
   }
-  .accept:hover{
+  .accept:hover {
     background-color: var(--bgHover);
   }
-  .accept:active{
+  .accept:active {
     background-color: var(--colorPrimary);
     border: 1px solid var(--textMain);
   }
   /* Cancel */
 
-  .cancel{
+  .cancel {
     background-color: var(--accentRed);
   }
-  .cancel:hover{
+  .cancel:hover {
     background-color: var(--bgHover);
   }
-  .cancel:active{
+  .cancel:active {
     background-color: var(--colorSecondary);
     border: 1px solid var(--textMain);
   }
 
   /* Option */
 
-  .option{
+  .option {
     background-color: var(--bgHover);
   }
-  .option:hover{
+  .option:hover {
     background-color: var(--bgTertiary);
     border: 1px solid var(--bgSecondary);
   }
-  .option:active{
+  .option:active {
     background-color: var(--accentOrange);
     border: 1px solid var(--textMain);
   }
 
   /*Disabled*/
-  .disabled{
+  .disabled {
     background-color: var(--bgSecondary);
     color: var(--textDim);
   }
