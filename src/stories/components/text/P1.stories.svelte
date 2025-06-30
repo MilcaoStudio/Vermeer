@@ -4,6 +4,20 @@
   export const meta = {
     title: "text/Body Large",
     component: P1,
+    args: {
+      content: "Johannes Vermeer was a Dutch painter",
+    },
+    argTypes: {
+      color: {
+        control: "select",
+        options: [
+          "var(--textDim)",
+          "var(--textMain)",
+          "var(--colorSecondary)",
+          "var(--colorPrimary)",
+        ],
+      },
+    },
   };
 </script>
 
@@ -17,20 +31,17 @@
   name="textDim"
   args={{
     color: "var(--textDim)",
-    content: "Johannes Vermeer was a Dutch painter",
   }}
 ></Story>
 <Story
   name="textMain"
   args={{
     color: "var(--textMain)",
-    content: "Johannes Vermeer was a Dutch painter",
   }}
 ></Story>
 <Story
   name="blueAccent"
   args={{
     color: "var(--colorSecondary)",
-    content: "Johannes Vermeer was a Dutch painter",
   }}
 ></Story>
