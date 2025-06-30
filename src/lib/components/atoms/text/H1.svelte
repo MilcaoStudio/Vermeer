@@ -8,8 +8,8 @@
 
 <style>
   h1 {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: var(--v-headline-large-size);
+    font-weight: var(--v-headline-large-weight);
     padding: var(--buttonPadding);
   }
 </style>

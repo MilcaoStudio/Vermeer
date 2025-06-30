@@ -10,7 +10,8 @@
 
 <style>
   p {
-    font-size: 14px;
-    font-weight: 300;
+    font-size: var(--v-body-small-size);
+    font-weight: var(--v-body-small-weight);
+    margin: 0;
   }
 </style>

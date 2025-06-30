@@ -6,7 +6,8 @@
 
 <style>
   p {
-    font-size: 12px;
-    font-weight: 300;
+    font-size: var(--v-body-xsmall-size);
+    font-weight: var(--v-body-xsmall-size);
+    margin: 0;
   }
 </style>

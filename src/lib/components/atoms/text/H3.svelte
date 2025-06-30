@@ -6,7 +6,7 @@
 
 <style>
   h3 {
-    font-size: 22px;
-    font-weight: 400;
+    font-size: var(--v-headline-small-size);
+    font-weight: var(--v-headline-small-size);
   }
 </style>

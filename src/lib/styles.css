@@ -50,6 +50,28 @@
 
   /* BORDER RADIUS */
 
-  --borderRadius: 3px;
-  --borderRadius--iner: 6px;
+  /* --borderRadius: 3px; */
+  /* --borderRadius--iner: 6px; */
+  --border-radius-xs: 4px;
+  --border-radius-s: 8px;
+  --border-radius-m: 12px;
+  --border-radius-l: 16px;
+
+  /* HEADERS */
+  --v-headline-large-size: 32px;
+  --v-headline-large-weight: 700;
+  --v-headline-medium-size: 26px;
+  --v-headline-medium-weight: 700;
+  --v-headline-small-size: 22px;
+  --v-headline-small-weight: 400;
+
+  /* BODY */
+  --v-body-large-size: 18px;
+  --v-body-large-weight: 700;
+  --v-body-medium-size: 16px;
+  --v-body-medium-weight: 400;
+  --v-body-small-size: 14px;
+  --v-body-small-weight: 300;
+  --v-body-xsmall-size: 12px;
+  --v-body-xsmall-weight: 300;
 }
