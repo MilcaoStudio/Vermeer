@@ -1,12 +1,13 @@
 <script>
-    export let color = "var(--textDim)";
+  export let color = "var(--textDim)";
 </script>
 
 <p {...$$restProps} style:color><slot /></p>
 
 <style>
-    p {
-        font-size: 18px;
-        font-weight: 700;
-    }
+  p {
+    font-size: var(--v-body-large-size);
+    font-weight: var(--v-body-large-weight);
+    margin: 0;
+  }
 </style>
