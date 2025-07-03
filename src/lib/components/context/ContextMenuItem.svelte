@@ -8,7 +8,13 @@
   export let color = "var(--textMain)";
 </script>
 
-<button class="context-menu-item" style:--bg={background} on:click={onclick} on:mouseenter={onmouseenter} {...$$restProps}>
+<button
+  class="context-menu-item"
+  style:--bg={background}
+  on:click={onclick}
+  on:mouseenter={onmouseenter}
+  {...$$restProps}
+>
   <slot name="content">
     <P2 {color}><span class:danger={irreversible}><slot /></span></P2>
   </slot>

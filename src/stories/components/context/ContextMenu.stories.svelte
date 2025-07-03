@@ -8,6 +8,10 @@
     title: "context/ContextMenu",
     component: ContextMenu,
     args: {
+      x: 200,
+      y: 150,
+      minWidth: 150,
+      anchor: "topright",
       actions: [
         {
           id: "reply",
